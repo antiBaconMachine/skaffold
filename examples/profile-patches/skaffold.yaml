@@ -30,5 +30,11 @@ profiles:
           image: skaffold-world
           context: world-service
       - op: add
-        path: /deploy/kubectl/manifests/1
-        value: 'world-service/*.yaml'
+        path: /deploy/helm
+        value:
+          releases:
+            - name: world
+              chartPath: world-service/helm
+              values:
+                foo: bar
+                image: skaffold-world
