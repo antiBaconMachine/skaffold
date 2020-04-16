@@ -5,4 +5,4 @@ metadata:
 spec:
   containers:
   - name: world-service
-    image: skaffold-world
+    image: {{ .Values.image }}
